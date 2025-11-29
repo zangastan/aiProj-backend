@@ -17,10 +17,10 @@ class Login(BaseModel):
 # USER RESPONSE (GET / LIST)
 # -----------------------------
 class UserResponse(BaseModel):
-    id: str
-    full_name: str
+    # id: str
+    fullName: str
     email: EmailStr
-    role: str
+    # role: str
 
     class Config:
         orm_mode = True
@@ -30,10 +30,10 @@ class UserResponse(BaseModel):
 # CREATE NEW USER
 # -----------------------------
 class NewUser(BaseModel):
-    full_name: str
+    fullName: str
     email: EmailStr
     password: str
-    role: str = "user"  # default role
+    # role: str = "user"
 
     class Config:
         orm_mode = True
@@ -43,7 +43,7 @@ class NewUser(BaseModel):
 # UPDATE USER
 # -----------------------------
 class UpdateUser(BaseModel):
-    full_name: Optional[str] = None
+    fullName: Optional[str] = None
     email: Optional[EmailStr] = None
     password: Optional[str] = None
     role: Optional[str] = None

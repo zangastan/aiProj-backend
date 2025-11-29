@@ -13,6 +13,7 @@ class UserServices:
     # CREATE USER
     # -----------------------------
     def create_user(self, db: Session, data: NewUser):
+        data.password = security.hash_password(data.password)
         new_user = self.repo.create_user(db, data)
         if not new_user:
             raise Exception("Failed to create user")
